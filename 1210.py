@@ -14,12 +14,10 @@ def find_ladder(list_array):
         nj += dj[move]
         if (0<=ni<100) and (0<=nj<100) and (list_array[ni][nj] == 1):
             list_array[ni][nj] = 0
-            ni += di[move]
-            nj += dj[move]   
         elif nj>=100 or nj<0 or ni>=100 or ni<0 or list_array[ni][nj] == 0:  #인덱스 오류/0일 경우 
             ni -= di[move]       #실행취소
             nj -= dj[move]
-            move = (move+1)%3    #방향전환                                      
+        move = (move+1)%3    #방향전환                                      
     return nj
 
 for i in range(10):
